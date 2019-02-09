@@ -10,9 +10,16 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
 
+    @IBOutlet var itemView: UIView!
+    @IBOutlet var itemLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setup(itemModel: ItemModel) {
+        itemLabel.text = itemModel.title
     }
 
 

@@ -12,7 +12,21 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        ItemFunctions.readItems(completion: { [weak self] in
+            self?.tableView.reloadData()
+        })
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Data.itemModels.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ItemTableViewCell
+        cell.setup(itemModel: Data.itemModels[indexPath.row])
+        
+        return cell
     }
 
 
