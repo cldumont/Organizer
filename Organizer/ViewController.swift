@@ -17,6 +17,10 @@ class ViewController: UITableViewController {
             self?.tableView.reloadData()
         })
     }
+}
+
+// MARK:- TableView Delegates
+extension ViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.itemModels.count
@@ -27,10 +31,6 @@ class ViewController: UITableViewController {
         cell.setup(itemModel: Data.itemModels[indexPath.row])
         
         return cell
-    }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
     }
 
 }

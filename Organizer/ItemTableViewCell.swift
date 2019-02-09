@@ -16,11 +16,7 @@ class ItemTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        itemView.layer.shadowOpacity = 1
-        itemView.layer.shadowOffset = CGSize.zero
-        itemView.layer.shadowColor = UIColor.darkGray.cgColor
-        itemView.layer.cornerRadius = 10
-        
+        itemView.addShadowAndRoundedCorners()
     }
     
     func setup(itemModel: ItemModel) {
