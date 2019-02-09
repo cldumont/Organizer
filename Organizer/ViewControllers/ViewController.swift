@@ -13,9 +13,17 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
+        
         ItemFunctions.readItems(completion: { [weak self] in
             self?.tableView.reloadData()
         })
+    }
+    
+    @objc func addItem() {
+        
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AddItem") as? AddItemViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
 }
 
