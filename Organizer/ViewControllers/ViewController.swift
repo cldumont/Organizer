@@ -10,8 +10,11 @@ import UIKit
 
 class ViewController: UITableViewController {
 
+    let navigationAnimation = NavigationAnimation()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.delegate = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
         
@@ -41,5 +44,15 @@ extension ViewController {
         return cell
     }
 
+}
+
+// MARK:- Navigation Transition Delegate
+extension ViewController: UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        navigationAnimation.popStyle = (operation == .pop)
+        return navigationAnimation
+    }
 }
 
