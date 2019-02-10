@@ -18,6 +18,7 @@
 		4409D625220F53EB0022E63C /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409D624220F53EB0022E63C /* ItemTableViewCell.swift */; };
 		4409D62E220F605F0022E63C /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409D62D220F605F0022E63C /* Views.swift */; };
 		4409D631220F74410022E63C /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409D630220F74410022E63C /* AddItemViewController.swift */; };
+		448137AE22106A3300E2D66F /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448137AC22106A3300E2D66F /* AddItem.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		4409D624220F53EB0022E63C /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		4409D62D220F605F0022E63C /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		4409D630220F74410022E63C /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		448137AD22106A3300E2D66F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Organizer/Views/ItemViewController/Base.lproj/AddItem.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,7 @@
 		4409D60A220F4E4E0022E63C /* Organizer */ = {
 			isa = PBXGroup;
 			children = (
-				4409D62F220F73FA0022E63C /* ViewControllers */,
+				4409D62F220F73FA0022E63C /* Views */,
 				4409D626220F5F1D0022E63C /* Extensions */,
 				4409D61D220F4F7A0022E63C /* Data Model */,
 				4409D60B220F4E4E0022E63C /* AppDelegate.swift */,
@@ -95,15 +97,32 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		4409D62F220F73FA0022E63C /* ViewControllers */ = {
+		4409D62F220F73FA0022E63C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				448137AB221069FA00E2D66F /* AddItemViewController */,
+				448137AA221069C200E2D66F /* ItemViewController */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		448137AA221069C200E2D66F /* ItemViewController */ = {
 			isa = PBXGroup;
 			children = (
 				4409D60D220F4E4E0022E63C /* ViewController.swift */,
 				4409D624220F53EB0022E63C /* ItemTableViewCell.swift */,
-				4409D630220F74410022E63C /* AddItemViewController.swift */,
 				4409D60F220F4E4E0022E63C /* Main.storyboard */,
 			);
-			path = ViewControllers;
+			path = ItemViewController;
+			sourceTree = "<group>";
+		};
+		448137AB221069FA00E2D66F /* AddItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4409D630220F74410022E63C /* AddItemViewController.swift */,
+				448137AC22106A3300E2D66F /* AddItem.storyboard */,
+			);
+			path = AddItemViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4409D616220F4E500022E63C /* LaunchScreen.storyboard in Resources */,
+				448137AE22106A3300E2D66F /* AddItem.storyboard in Resources */,
 				4409D613220F4E500022E63C /* Assets.xcassets in Resources */,
 				4409D611220F4E4E0022E63C /* Main.storyboard in Resources */,
 			);
@@ -205,6 +225,14 @@
 				4409D615220F4E500022E63C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		448137AC22106A3300E2D66F /* AddItem.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				448137AD22106A3300E2D66F /* Base */,
+			);
+			name = AddItem.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
