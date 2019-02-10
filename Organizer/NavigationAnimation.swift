@@ -9,18 +9,13 @@
 import UIKit
 
 class NavigationAnimation: NSObject, UIViewControllerAnimatedTransitioning {
-    var popStyle: Bool = false
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.20
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        if popStyle {
-            animatePop(using: transitionContext)
-            return
-        }
-        
+
         let fz = transitionContext.viewController(forKey: .from)!
         let tz = transitionContext.viewController(forKey: .to)!
         
@@ -37,24 +32,6 @@ class NavigationAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         }, completion: {_ in
             transitionContext.completeTransition(true)
         })
-    }
-    
-    func animatePop(using transitionContext: UIViewControllerContextTransitioning) {
-        
-        let fz = transitionContext.viewController(forKey: .from)!
-        let tz = transitionContext.viewController(forKey: .to)!
-        
-        let f = transitionContext.initialFrame(for: fz)
-        let fOffPop = f.offsetBy(dx: f.width, dy: 55)
-        
-        transitionContext.containerView.insertSubview(tz.view, belowSubview: fz.view)
-        
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            fz.view.frame = fOffPop
-        }, completion: {_ in
-            transitionContext.completeTransition(true)
-        })
-        
     }
     
 }

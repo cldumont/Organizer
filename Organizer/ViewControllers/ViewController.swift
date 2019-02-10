@@ -27,6 +27,7 @@ class ViewController: UITableViewController {
         
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AddItem") as? AddItemViewController
         self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
 }
 
@@ -51,7 +52,6 @@ extension ViewController: UIViewControllerTransitioningDelegate, UINavigationCon
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        navigationAnimation.popStyle = (operation == .pop)
         return navigationAnimation
     }
 }
